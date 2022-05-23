@@ -7,26 +7,29 @@ import android.view.Window
 import android.view.WindowManager
 import android.widget.Toast
 import br.com.fiap42scj.crudandroid.databinding.ActivityLoginBinding
+import br.com.fiap42scj.crudandroid.databinding.ActivityRegisterBinding
 import com.google.firebase.auth.FirebaseAuth
 import java.util.regex.Pattern
 
-class LoginActivity : AppCompatActivity() {
+class RegisterActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityLoginBinding
+    private lateinit var binding: ActivityRegisterBinding
     private var emailRegex =
         Pattern.compile("[a-z0-9!#\$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#\$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
-        binding = ActivityLoginBinding.inflate(layoutInflater)
+        binding = ActivityRegisterBinding.inflate(layoutInflater)
         val view = binding.root
         fullScreen()
         setContentView(view)
 
-        binding.btLogin.setOnClickListener {
+        binding.btRegister.setOnClickListener {
 
             val email = binding.inputEmail.text.toString()
             val password = binding.inputPassword.text.toString()
+            val passwordConfirm = binding.inputPasswordConfirm.text.toString()
 
             if ((email.isBlank() || !emailRegex.matcher(email).matches())) {
                 toast(getString(R.string.invalid_email_message))
@@ -38,7 +41,17 @@ class LoginActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password).addOnCompleteListener {
+            if (password.length < 8) {
+                toast(getString(R.string.invalid_password_length_message))
+                return@setOnClickListener
+            }
+
+            if (password != passwordConfirm) {
+                toast(getString(R.string.invalid_password_confirm_message))
+                return@setOnClickListener
+            }
+
+            FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password).addOnCompleteListener {
                 if (it.isSuccessful) {
                     startActivity(Intent(this, MainActivity::class.java))
                     finish()
@@ -49,12 +62,9 @@ class LoginActivity : AppCompatActivity() {
 
         }
 
-        binding.btSignup.setOnClickListener {
-            startActivity(Intent(this, RegisterActivity::class.java))
-        }
-
-        binding.btAbout.setOnClickListener {
-            startActivity(Intent(this, AboutActivity::class.java))
+        binding.btBackLogin.setOnClickListener {
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
         }
 
     }

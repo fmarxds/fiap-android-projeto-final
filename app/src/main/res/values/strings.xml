@@ -12,6 +12,13 @@
     <string name="invalid_password_message">Invalid password</string>
     <string name="invalid_credentials_message">Invalid credentials</string>
 
+    <!--Cadastro-->
+    <string name="label_register_confirm_password">Confirm password</string>
+    <string name="label_bt_register">Register</string>
+    <string name="invalid_password_length_message">Password must be at least 8 characteres</string>
+    <string name="invalid_password_confirm_message">Passwords dont match</string>
+    <string name="label_bt_backlogin">Return</string>
+
     <!--Fragment de registro do veículo -->
     <string name="marca_do_ve_culo">Type the vehicle brand</string>
     <string name="modelo_do_ve_culo">Type the vehicle model</string>
