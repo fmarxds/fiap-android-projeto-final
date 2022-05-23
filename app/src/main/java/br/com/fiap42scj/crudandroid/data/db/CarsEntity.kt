@@ -1,0 +1,15 @@
+package br.com.fiap42scj.crudandroid.data.db
+
+import android.os.Parcelable
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
+@Entity(tableName = "cars_table")
+data class CarsEntity (
+    @PrimaryKey(autoGenerate = true)
+    val id: Long = 0,
+    val brand: String,
+    val model: String
+): Parcelable
