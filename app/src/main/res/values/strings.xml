@@ -1,32 +1,36 @@
 <resources>
 
-    <string name="app_name">Crud Android</string>
+    <string name="app_name">Android Final Project</string>
 
     <!--Login -->
-    <string name="label_login_email">Email</string>
-    <string name="label_login_password">Senha</string>
+    <string name="label_login_email">Mail</string>
+    <string name="label_login_password">Password</string>
     <string name="label_bt_login">Login</string>
-    <string name="label_bt_about">Sobre</string>
-    <string name="label_bt_signup">Cadastrar</string>
-    <string name="invalid_email_message">Email inválido</string>
-    <string name="invalid_password_message">Senha inválida</string>
-    <string name="invalid_credentials_message">Credenciais inválidas</string>
+    <string name="label_bt_about">About</string>
+    <string name="label_bt_signup">Sign Up</string>
+    <string name="invalid_email_message">Invalid mail</string>
+    <string name="invalid_password_message">Invalid password</string>
+    <string name="invalid_credentials_message">Invalid credentials</string>
 
     <!--Fragment de registro do veículo -->
-    <string name="marca_do_ve_culo">Digite a marca do Veículo</string>
-    <string name="modelo_do_ve_culo">Digite o modelo do Veículo</string>
-    <string name="cadastrar_ve_culo">Cadastrar veículo</string>
-    <string name="cars_fragment">Carros</string>
+    <string name="marca_do_ve_culo">Type the vehicle brand</string>
+    <string name="modelo_do_ve_culo">Type the vehicle model</string>
+    <string name="cadastrar_ve_culo">Register Vehicle</string>
+    <string name="cars_fragment">Vehicles</string>
 
     <!--Registro do veículo -->
-    <string name="car_registered">Veículo inserido com sucesso!</string>
-    <string name="car_error_insert">Erro na inserção do veículo!</string>
-    <string name="register_label">Cadastro de Veículos - Fiap</string>
-    <string name="update">Atualizar</string>
-    <string name="car_update_sucess">Veículo atualizado com sucesso!</string>
-    <string name="apagar_ve_culo">Apagar Veículo</string>
-    <string name="car_delete_sucess">Veículo excluído com sucesso!</string>
-    <string name="car_error_delete">Erro na exclusão do veículo!</string>
-    <string name="car_error_update">Erro na atualização do veículo!</string>
+    <string name="car_registered">Successfully registered vehicle!</string>
+    <string name="car_error_insert">Error when inserting vehicle!</string>
+    <string name="register_label">Vehicle Registration - FIAP</string>
+    <string name="update">Update</string>
+    <string name="car_update_sucess">Vehicle successfully updated!</string>
+    <string name="apagar_ve_culo">Delete Vehicle</string>
+    <string name="car_delete_sucess">Successfully deleted vehicle!</string>
+    <string name="car_error_delete">Error when deleting vehicle!</string>
+    <string name="car_error_update">Error when updating vehicle!</string>
+
+    <!--Tela sobre -->
+    <string name="about_dev">Developers</string>
+    <string name="about_version">Version</string>
 
 </resources>
