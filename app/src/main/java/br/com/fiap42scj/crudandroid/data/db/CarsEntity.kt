@@ -10,6 +10,6 @@ import kotlinx.parcelize.Parcelize
 data class CarsEntity (
     @PrimaryKey(autoGenerate = true)
     val id: Long = 0,
-    val brand: String,
-    val model: String
+    val brand: String? = null,
+    val model: String? = null
 ): Parcelable

@@ -1,5 +1,6 @@
 package br.com.fiap42scj.crudandroid
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -40,6 +41,11 @@ class LoginActivity : AppCompatActivity() {
 
             FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password).addOnCompleteListener {
                 if (it.isSuccessful) {
+                    val userUID = it.result.user?.uid
+                    val userIdSP = getSharedPreferences("USERID", Context.MODE_PRIVATE)
+
+                    userIdSP.edit().putString("USERID", userUID).apply()
+
                     startActivity(Intent(this, MainActivity::class.java))
                     finish()
                 } else {

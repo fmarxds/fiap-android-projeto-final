@@ -8,6 +8,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import br.com.fiap42scj.crudandroid.databinding.ActivityMainBinding
+import br.com.fiap42scj.crudandroid.utils.FirebaseUtils
 
 class MainActivity : AppCompatActivity() {
 
